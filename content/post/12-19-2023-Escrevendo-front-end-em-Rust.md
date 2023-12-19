@@ -5,31 +5,30 @@ date: 2023-12-19
 
 # Inicio
 
-Esse fim de Semana decidi me aventurar em algo diferente, eu nesse momento estou aprendendo em Rust e dando uma olhada em outras linguagens que são considerada destinadas a "low level", e acabei descobrindo que existe um framework chamado "Yew" pra Rust que possibiltia frontend ser feito com Rust. Logo pensei "hum... isso parece legal e eu tenho que dar uma olhada em frontend vou tentar". Então me deparei com uma estrutura semelhantes a frameworks modernos de Javascript, mas que também me possibilitava fazer algo como se fosse apenas html, css e JS, e como minha mãe dizia:
-` - Mente vazia, oficina do Diabo.` 
-No entanto, decidi fazer o projeto que todo programador senior tem em seu portifolio: `A LENDÁRIA POKEDEX.`
+Esse fim de Semana decidi me aventurar em algo diferente, eu nesse momento estou aprendendo em Rust e dando uma olhada em outras linguagens que são considerada destinadas a "low level", e acabei descobrindo que existe um framework chamado "Yew" pra Rust que possibilita frontend ser feito com Rust. Logo pensei "hum... isso parece legal e eu tenho que dar uma olhada em frontend vou tentar". Então me deparei com uma estrutura semelhantes a frameworks modernos de Javascript, mas que também me possibilita fazer algo como se fosse apenas html, css e JS, e como minha mãe dizia:
+` - Mente vazia, oficina do Diabo.`
+No entanto, decidi fazer o projeto que todo programador sênior tem em seu portfólio: `A LENDÁRIA POKEDEX.`
 
-# "Arquitetura", se é que se pode chamar assim.
+#  "Arquitetura", se é que se pode chamar assim.
 
-Basicamente é como se fosse um aplicativo com html, css e js. Porém com a adição da pasta favicon para o favicon (icone do aplicativo). 
+Basicamente é como se fosse um aplicativo com html, css e js. Porém com a adição da pasta favicon para o favicon (ícone do aplicativo).
 
 # Tecnologias usadas
 
 [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) - Apesar de tudo, o HTML não é muito usado para nada além de funções de link.
-[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Estiliza o codigo assim como se fosse normalmente.
+[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Estiliza o código assim como se fosse normalmente.
 [WebAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly) - Webassembly faz boa parte da "magica" do nosso aplicaitvo, fazendo desde de a interface entre Rust, browser e JS até o nosso server.
-[Trunk](https://trunkrs.dev/) - Trunk é um bundler pra Webassembly com Rust, na nossa aplicação é vital para rodar o server e renderizar elementos do nosso HTML.
-[Rust](https://doc.rust-lang.org/book/) - Foi a linguagem escolhida, apesar de boa parte das funções serem adaptas do JS e virarem JS no final, o codigo ainda é bem no "estilo Rust" e usa bastante coisa da linguagem.
-
+[Trunk](https://trunkrs.dev/) - Trunk é um bundler para Webassembly com Rust, na nossa aplicação é vital para rodar o server e renderizar elementos do nosso HTML.
+[Rust](https://doc.rust-lang.org/book/) - Foi a linguagem escolhida, apesar de boa parte das funções serem adeptas do JS e virarem JS no final, o código ainda é bem no "estilo Rust" e usa bastante coisa da linguagem.
 
 # Como tudo começou?
 
-Bom, estava eu conversando com um amigo  sobre tecnologias web e me veio a ideia de procurar algo diferente pra fazer frontend e logo pensei "com certeza deve ter algo em Rust" e acabou que eu achei o Yew que é um framework de Rust para frontend, ele tem suporte pra maioria das tecnologias da web, pelo o que vi antigamente o Yew fazia bem mais coisa por si mesmo, mas agora ele foca mais na componentização e deixa mais coisas pro WASM. 
-Tecnologia escolhida, certo? Hora de fazer algum projeto. Eu desde do inicio não queria nada complexo, só queria testar o framework e ver como me sairia então logo pensei em algo facil de achar e que provavelmente é um "must" pra quem está aprendendo: Pokedex, logo achei conteúdo bem fácil e didático (Credito ao [Manual do Dev](https://www.youtube.com/watch?v=SjtdH3dWLa8)) então peguei a ideia do design e como o Javascript se intregaria nisso. 
+Bom, estava eu conversando com um amigo  sobre tecnologias web e me veio a ideia de procurar algo diferente pra fazer frontend e logo pensei "com certeza deve ter algo em Rust" e acabou que eu achei o Yew que é um framework de Rust para frontend, ele tem suporte pra maioria das tecnologias da web, pelo o que vi antigamente o Yew fazia bem mais coisa por si mesmo, mas agora ele foca mais na componentização e deixa mais coisas pro WASM.
+Tecnologia escolhida, certo? Hora de fazer algum projeto. Eu desde do inicio não queria nada complexo, só queria testar o framework e ver como me sairia então logo pensei em algo fácil de achar e que provavelmente é um "must" para quem está aprendendo: Pokedex, logo achei conteúdo bem fácil e didático (Credito ao [Manual do Dev](https://www.youtube.com/watch?v=SjtdH3dWLa8)) então peguei a ideia do design e como o Javascript se integraria nisso.
 
 # Primeiras passos no Yew
 
-Como não era nada difícil, uma lida bem rapida na documentação já é até oferecido um template de app mais simples que já iria me servir, já que eu queria fazer algo simples que é só praticamente uma pagina. Então só tive que dar uma olhada rapida e a macro `html![]` ajudou bastante já que é praticamente escrever html normal, com a diferença que qualquer coisa que  venha do Rust tem que ser passado entre chaves `{}`, se você quer passar um texto no elemento html vai ter que fazer com chaves, por exemplo:
+Como não era nada difícil, uma lida bem rápida na documentação já é até oferecido um template de app mais simples que já iria me servir, já que eu queria fazer algo simples que é só praticamente uma página. Então só tive que dar uma olhada rápida e a macro `html![]` ajudou bastante já que é praticamente escrever html normal, com a diferença que qualquer coisa que  venha do Rust tem que ser passado entre chaves `{}`, se você quer passar um texto no elemento html vai ter que fazer com chaves, por exemplo:
 ```Rust 
 use yew::prelude::*;
 
@@ -52,7 +51,7 @@ fn app() -> Html {
 }
 ```
 
-Até aqui estava tudo bem, mas quando fui rodar o projeto, percebi que algumas coisas não apareciam e logo fui pesquisar, descobri que para renderizar as coisas do html que vem direto do html mesmo, precisamos usar a tag do html `data-trunk` que tem sua propria syntax, por exemplo:
+Até aqui estava tudo bem, mas quando fui rodar o projeto, percebi que algumas coisas não apareciam e logo fui pesquisar, descobri que para renderizar as coisas do html que vem direto do html mesmo, precisamos usar a tag do html `data-trunk` que tem sua própria syntax, por exemplo:
 ```html
 Por exemplo no html normalmente seria dessa forma
 <link rel="stylesheet" href="path">
@@ -64,12 +63,13 @@ Até aqui nenhum desafio e até aí... eu estava achando fácil e que não teria
 
 # Javascript... o problema
 
-Bom... até agora estava tudo indo bem até que veio o Javascript acabar com tudo isso, exemplificando, se eu estivesse no Javascript, normalmente, eu poderia usar [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) para consumir a pokeapi, mas como estou no Rust/Webassembly, não é tão simples assim e aqui começa a complicar, já que a documentação não é tão clara sobre e não tem muito material na internet, até agora já se passou um dia 1 e meio (comecei na madrugada de sabado) e nesse momento eu já estava tentando de tudo, conseguindo até alguns resultados, mas nada satisfatório e cheio de erros. 
-No entanto, eu pensei numa maxima da programação "Não existe um problema que ninguém já não tenha passado" e fui buscar por conteúdo de Rust com a pokeapi e descobri que até existe uma crate (lib), mas até aí nada muito útil pra mim. Até que eu achei esse repositório [Obrigado, amigo, me ajudou muito](https://github.com/apinanyogaratnam/yew-whos-that-pokemon-client/blob/main/src/main.rs) e me ajudou bastante na lógica e incorporei algumas coisas desse codigo no meu (bastante até pra ser sincero), mas muita coisa que ele faz é diferente então acabou que muita coisa não funcionou. 
+Bom... até agora estava tudo indo bem até que veio o Javascript acabar com tudo isso, exemplificando, se eu estivesse no Javascript, normalmente, eu poderia usar [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) para consumir a pokeapi, mas como estou no Rust/Webassembly, não é tão simples assim e aqui começa a complicar, já que a documentação não é tão clara sobre e não tem muito material na internet, até agora já se passou um dia 1 e meio (comecei na madrugada de sabado) e nesse momento eu já estava tentando de tudo, conseguindo até alguns resultados, mas nada satisfatório e cheio de erros.
+No entanto, eu pensei numa máxima da programação "Não existe um problema que ninguém já não tenha passado" e fui buscar por conteúdo de Rust com a pokeapi e descobri que até existe uma crate (lib), mas até aí nada muito útil pra mim. Até que eu achei esse repositório [Obrigado, amigo, me ajudou muito](https://github.com/apinanyogaratnam/yew-whos-that-pokemon-client/blob/main/src/main.rs) e me ajudou bastante na lógica e incorporei algumas coisas desse codigo no meu (bastante até pra ser sincero), mas muita coisa que ele faz é diferente então acabou que muita coisa não funcionou.
 
 # Closures e seu escopo
 
-Após completar 2 dias decidi ir descansar com alguns problemas ainda, bom especificamente um problema com closures que as variaveis iam pra fora do escopo da closure... e bom, como eu já estava descansado, eu pensei o seguinte "Ah só fazer uma função" e realmente até aí resolveu, mas gerou MAIS UM PROBLEMA, mas esse problema daí já tinha resolvido e foi um alívio. Só pra contexto, o codigo tava assim, não exatamente, mas algumas coisas estavam dessa forma, mas vai ilustrar meu ponto:
+Após completar 2 dias decidi ir descansar com alguns problemas ainda, bom especificamente um problema com closures que as variáveis iam pra fora do escopo da closure... e bom, como eu já estava descansado, eu pensei o seguinte "Ah só fazer uma função" e realmente até aí resolveu, mas gerou MAIS UM PROBLEMA, mas esse problema daí já tinha resolvido e foi um alívio. Só pra contexto, o código tava assim, não exatamente, mas algumas coisas estavam dessa forma, mas vai ilustrar meu ponto:
+
 ```Rust
 use std::ops::Add;
 use yew::prelude::*;
@@ -177,7 +177,7 @@ fn main() {
 
 # O Fim e a resolução
 
-Bom, até aí, eu já tinha resolvido um problema, mas tinha sobrado mais um... que se você sabe um pouco de Rust notou no snippet anterior, mas vou mostar e explicar (tentar):
+Bom, até aí, eu já tinha resolvido um problema, mas tinha sobrado mais um... que se você sabe um pouco de Rust notou no snippet anterior, mas vou mostrar e explicar (tentar):
 
 ```Rust
 let pokemon_state = use_state_eq::<Option<Pokemon>, _>(|| None);
@@ -203,7 +203,7 @@ let pokemon_state = use_state_eq::<Option<Pokemon>, _>(|| None);
 
 ```
 
-Nesse trecho de codigo, note que as variaveis são copiadas, mas sua ownership foi movida pra closure e o que isso quer dizer? EXATO, ela está no escopo da closure e não pode ser chamada... mas graças a deus, eu tenho uma pessoa muito especial que já mexe com Rust antes de mim e me ajudou me avisando sobre isso já que ela passou pelo mesmo problema e me ajudou a resolver, o codigo acabou ficando um pouco repetitivo, mas ficou assim: 
+Nesse trecho de código, note que as variáveis são copiadas, mas sua ownership foi movida para closure e o que isso quer dizer? EXATO, ela está no escopo da closure e não pode ser chamada... mas graças a deus, eu tenho uma pessoa muito especial que já mexe com Rust antes de mim e me ajudou me avisando sobre isso já que ela passou pelo mesmo problema e me ajudou a resolver, o código acabou ficando um pouco repetitivo, mas ficou assim:
 ```Rust
 
 fn app() -> Html {
@@ -235,7 +235,7 @@ fn app() -> Html {
     });
 ```
 
-Bom, até aí resolvido, né? Só rodar e pronto... mas os POKEMONS e as contagens estão desorganizadas! Droga... passei o dia inteiro e já estou morto. Depois de grandes discussões com a minha namorada, acabamos que não conseguimos resolver esses problemas e sinceramente, posso dizer que a melhor solução foi dar um tempo... com esse tempo dado consegui visualizar o problema de uma forma completamente diferente. Lembra que o Javascript até agora tinha sido um vilão? Então, nessa reta final ele se redimiu e virou o heroi porque dando uma olhada no codigo acabei percebendo que a função para renderizar era desacoplada dos eventos e que a variavel que devia estar sendo usada não era search_state e sim pokemon_state já que ambas funcionam diferente e em tempos diferentes, então é melhor usar pokemon_state para deixar tudo junto... e foi algo que passou completamente despercebido a principio, mas vamos focar nas funções que foram o terror do dia, essa função:
+Bom, até aí resolvido, né? Só rodar e pronto... mas os POKÉMONS e as contagens estão desorganizadas! Droga... passei o dia inteiro e já estou morto. Depois de grandes discussões com a minha namorada, acabamos que não conseguimos resolver esses problemas e sinceramente, posso dizer que a melhor solução foi dar um tempo... com esse tempo dado consegui visualizar o problema de uma forma completamente diferente. Lembra que o Javascript até agora tinha sido um vilão? Então, nessa reta final ele se redimiu e virou o herói porque dando uma olhada no código acabei percebendo que a função para renderizar era desacoplada dos eventos e que a variável que devia estar sendo usada não era search_state e sim pokemon_state já que ambas funcionam diferente e em tempos diferentes, então é melhor usar pokemon_state para deixar tudo junto... e foi algo que passou completamente despercebido a princípio, mas vamos focar nas funções que foram o terror do dia, essa função:
 ```Rust 
 fn on_click(
     search_state_outer: UseStateHandle<i32>,
@@ -315,8 +315,8 @@ fn render_pokemon(pokemon_state: UseStateHandle<Option<Pokemon>>, search_state: 
 }
 ```
 
-Assim resolvendo o problema de incrementar errado e trazer os valores default para a pokedex, o codigo final ficou assim: [Acho que eu ia colocar mais um snippet, né?](https://github.com/Every2/Rust-pokedex)
+Assim resolvendo o problema de incrementar errado e trazer os valores default para a pokedex, o código final ficou assim: [Acho que eu ia colocar mais um snippet, né?](https://github.com/Every2/Rust-pokedex)
 
 # Considerações finais
 
-Bom, eu acabei aprendendo bastante coisa sobre Rust e acabei gostando do Yew, pretendo fazer alguns projetos nele e talvez até mais complexos já que ele permite que bastante coisa possa ser feita nele. O codigo talvez tenha ficado bagunçado e vale a pena uma refatoração futura, mas eu acho que o resultado e o aprendizado valeram muito. Se você leu até aqui, Obrigado. :)
+Bom, eu acabei aprendendo bastante coisa sobre Rust e acabei gostando do Yew, pretendo fazer alguns projetos nele e talvez até mais complexos já que ele permite que bastante coisa possa ser feita nele. O código talvez tenha ficado bagunçado e vale a pena uma refatoração futura, mas eu acho que o resultado e o aprendizado valeram muito. Se você leu até aqui, Obrigado. :)
