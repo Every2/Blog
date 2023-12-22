@@ -235,7 +235,7 @@ fn app() -> Html {
     });
 ```
 
-Bom, até aí resolvido, né? Só rodar e pronto... mas os POKÉMONS e as contagens estão desorganizadas! Droga... passei o dia inteiro e já estou morto. Depois de grandes discussões com a minha namorada, acabamos que não conseguimos resolver esses problemas e sinceramente, posso dizer que a melhor solução foi dar um tempo... com esse tempo dado consegui visualizar o problema de uma forma completamente diferente. Lembra que o Javascript até agora tinha sido um vilão? Então, nessa reta final ele se redimiu e virou o herói porque dando uma olhada no código acabei percebendo que a função para renderizar era desacoplada dos eventos e que a variável que devia estar sendo usada não era search_state e sim pokemon_state já que ambas funcionam diferente e em tempos diferentes, então é melhor usar pokemon_state para deixar tudo junto... e foi algo que passou completamente despercebido a princípio, mas vamos focar nas funções que foram o terror do dia, essa função:
+Bom, até aí resolvido, né? Só rodar e pronto... mas os POKÉMONS e as contagens estão desorganizadas! Droga... passei o dia inteiro e já estou morto. Depois de grandes discussões com a minha namorada, acabamos que não conseguimos resolver esses problemas e sinceramente, posso dizer que a melhor solução foi dar um tempo... com esse tempo dado consegui visualizar o problema de uma forma completamente diferente. Lembra que o Javascript até agora tinha sido um vilão? Então, nessa reta final ele se redimiu e virou o herói porque dando uma olhada no código acabei percebendo que a função para renderizar era desacoplada dos eventos e que a variável que devia estar sendo usada não era `search_state` e sim `pokemon_state` já que ambas funcionam diferente e em tempos diferentes, então é melhor usar pokemon_state para deixar tudo junto... e foi algo que passou completamente despercebido a princípio, mas vamos focar nas funções que foram o terror do dia, essa função:
 ```Rust 
 fn on_click(
     search_state_outer: UseStateHandle<i32>,
@@ -315,7 +315,7 @@ fn render_pokemon(pokemon_state: UseStateHandle<Option<Pokemon>>, search_state: 
 }
 ```
 
-Assim resolvendo o problema de incrementar errado e trazer os valores default para a pokedex, o código final ficou assim: [Acho que eu ia colocar mais um snippet, né?](https://github.com/Every2/Rust-pokedex)
+Assim resolvendo o problema de incrementar errado e trazer os valores default para a pokedex, o código final ficou assim: [Achou que eu ia colocar mais um snippet, né?](https://github.com/Every2/Rust-pokedex)
 
 # Considerações finais
 
