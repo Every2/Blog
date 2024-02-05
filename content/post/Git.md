@@ -1,6 +1,6 @@
 ---
 title: Estudando sobre Git
-date: 2024-02-5
+date: 2024-02-05
 ---
 
 # O que é Git?
