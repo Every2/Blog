@@ -95,7 +95,7 @@ Duas branches apontando para a mesma série de commits. Como o Git sabe em qual 
 
 O `HEAD` é um ponteiro para o branch local em que você está. Neste caso, você ainda está em master. O comando git branch apenas criou um novo branch,ele não mudou para aquele branch.
 
-![HEAD](/static/images/HEAD.png)
+![HEAD](../../static/images/HEAD.png)
 
 Você pode checar para onde o ponteiro aponta com o comando `git log`:
 
