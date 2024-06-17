@@ -1,5 +1,5 @@
 ---
-title: Escrevendo Front End em  Rust
+title: aaaa
 date: 2024-06-17
 ---
 
