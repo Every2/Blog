@@ -48,7 +48,7 @@ O Git tem três estados principais:
 
 ### Como achar um blob?
 
-```
+```markdown
 Vá até a pasta do seu repositório e digite:
 
 git log
@@ -77,7 +77,7 @@ SHA-1 (`Secure Hash Algorithm 1`) é um algoritmo de função hash criptográfic
 
 Os commits são as `unidades estruturais` de um cronograma de projeto Git. Podem ser considerados instantâneos ou marcos ao longo do cronograma de um projeto Git. São criados com o comando `git commit` para capturar o estado de um projeto naquele momento. Os commits do Git sempre são feitos no `repositório local` em primeira  instância.
 
-![Commits](/images/commits.png)
+![Commits](https://raw.githubusercontent.com/Every2/blog/main/images/commits.png)
 
 ### O que é uma branch?
 
@@ -89,17 +89,17 @@ O que acontece se você criar um novo branch? Bem, fazer isso cria um novo ponte
 
 Isso cria um novo ponteiro para o mesmo commit em que você está atualmente.
 
-![Branches](/images/Branches.png)
+![Branches](https://raw.githubusercontent.com/Every2/blog/main/images/commits.png)
 
 Duas branches apontando para a mesma série de commits. Como o Git sabe em qual branch você está atualmente? Ele mantém um ponteiro especial chamado `HEAD`.
 
 O `HEAD` é um ponteiro para o branch local em que você está. Neste caso, você ainda está em master. O comando git branch apenas criou um novo branch,ele não mudou para aquele branch.
 
-![HEAD](/images/HEAD.png)
+![HEAD](https://raw.githubusercontent.com/Every2/blog/main/images/HEAD.png)
 
 Você pode checar para onde o ponteiro aponta com o comando `git log`:
 
-```
+```markdown
 Usando as flags --oneline e decorate, para facilitar a visualização
 
 git log --oneline --decorate
@@ -110,11 +110,11 @@ f30ab (HEAD -> master, testing) add feature #32 - ability to add new formats to 
 ```
 Você pode trocar de branch com o comando `git checkout testing` e o ponteiro `HEAD` ficará assim.
 
-![HEAD MOVIDO](/images/HEADMOVIDO.png)
+![HEAD MOVIDO](https://raw.githubusercontent.com/Every2/blog/main/images/HEADMOVIDO.png)
 
 E agora quando você fizer qualquer commit dentro de testing, o ponteiro se moverá para o proximo commit dentro de testing, mas dentro de master permanecerá no mesmo lugar.
 
-![Commit testing](/images/COMMITTESTING.png)
+![Commit testing](https://raw.githubusercontent.com/Every2/blog/main/images/COMMITTESTING.png)
 
 ### O que é merge?
 
@@ -131,7 +131,7 @@ Caso você tenha conflitos entre o merge, uma mensagem será exibida:
 `error: Entry '<fileName>' would be overwritten by merge. Cannot merge. (Changes in staging area)`
 
 O git é bem inteligente e descritivo para ajudar a encontrar os conflitos. Usando o comando `git status` recebemos uma mensagem descritiva sobre o que está gerando o conflito, exemplo: 
-```
+```markdown
 git status
 On branch main
 You have unmerged paths.
@@ -144,7 +144,7 @@ Unmerged paths:
 both modified:   merge.txt
 ```
 Isso irá gerar uma saida no arquivo e você pode abrir um editor de texto para editar, por exemplo:
-```
+```markdown
 If you have questions, please
 <<<<<<< HEAD
 open an issue
@@ -155,7 +155,7 @@ ask your question in IRC.
 Então escolha as alterações que quer fazer no arquivo, remova os marcadores de conflito 
 `<<<` ou `>>>>` ou `====` e rode os comandos: 
 
-```
+```markdown
 git add .
 
 // O comentário pode ser diferente.
