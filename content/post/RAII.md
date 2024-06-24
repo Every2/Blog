@@ -9,7 +9,7 @@ Bom, hoje venho explicar (tentar) a vocês o que é RAII. Um conceito de gerenci
 Mas antes, uma breve introdução de como C entende sua memória. Pera, mas você não tá falando de C++ e de Rust, por que C? Porque é mais simples de explicar e entender também. Também irei focar bastante na ideia de malloc e delete, apesar de que vou usar new e delete pra ficar mais claro. Então sim, vai ser uma bagunça, mas você vai entender.
 
 
-![Memoria](Memory-Layout-of-C-1.webp)
+![Clique aqui pra ver o layout](https://files.prepinsta.com/wp-content/uploads/2022/12/Memory-Layout-of-C-1.webp)
 
 Resumindo: 
 
