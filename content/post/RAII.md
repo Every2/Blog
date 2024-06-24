@@ -9,7 +9,7 @@ Bom, hoje venho explicar (tentar) a vocês o que é RAII. Um conceito de gerenci
 Mas antes, uma breve introdução de como C entende sua memória. Pera, mas você não tá falando de C++ e de Rust, por que C? Porque é mais simples de explicar e entender também. Também irei focar bastante na ideia de malloc e delete, apesar de que vou usar new e delete pra ficar mais claro. Então sim, vai ser uma bagunça, mas você vai entender.
 
 
-![Memoria](/images/Memory-Layout-of-C-1.webp)
+[Memoria](https://files.prepinsta.com/wp-content/uploads/2022/12/Memory-Layout-of-C-1.webp)
 
 Resumindo: 
 
@@ -130,13 +130,13 @@ Mas espera, RAII não era thread safe? Sim, ele é. O problema é que a implemen
 
 Extras:
 
-![RAII pra C no GCC](http://echorand.me/site/notes/articles/c_cleanup/cleanup_attribute_c.html)
+RAII pra C no GCC: http://echorand.me/site/notes/articles/c_cleanup/cleanup_attribute_c.html
 
 
-![Palestra da CPPCON sobre RAII e Smart Pointers](https://www.youtube.com/watch?v=07rJOzFRs6M)
+Palestra da CPPCON sobre RAII e Smart Pointers: https://www.youtube.com/watch?v=07rJOzFRs6M
 
 
-![Palestra da CPPCON sobre shared_ptr Atomic](https://www.youtube.com/watch?v=lNPZV9Iqo3U)
+Palestra da CPPCON sobre shared_ptr Atomic: https://www.youtube.com/watch?v=lNPZV9Iqo3U
 
 
-![Video sobre reference couting](https://www.youtube.com/watch?v=2JasKMJonaQ)
+Video sobre reference couting: https://www.youtube.com/watch?v=2JasKMJonaQ
