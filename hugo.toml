@@ -8,6 +8,7 @@ theme = "beautifulhugo"
   subtitle = "Meu blog pessoal!"
   mainSections = ["post","posts"]
   favicon = "static/img/favicon.ico"
+  img = "images/*.png"
   dateFormat = "January 2, 2006"
 
 [Author]
