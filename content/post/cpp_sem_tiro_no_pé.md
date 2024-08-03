@@ -1,6 +1,6 @@
 ---
 title: Como escrever C++ sem dar tiro no pé (ou arrancar sua perna)
-date: 2024-03-08
+date: 2024-08-03
 ---
 
 Recentemente no twitter, me deparei com uma discussão sobre como usar C++ sem dar tiro no pé. Eu acho que lá me expressei mal e esse é um assunto complicado que envolve muito a opinião pessoal e contexto. Então vou dar minha opinião e listar alguns pontos onde eu acho que cada abordagem encaixa e listar os porquês discordo de algumas.
