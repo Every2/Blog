@@ -13,11 +13,11 @@ Mas antes, uma breve introdução de como C entende sua memória. Pera, mas voc�
 
 Resumindo: 
 
-Data Segment: É onde seu arrays são alocados, sim, seus arrays vão primeiramente aqui. Ele reserva essa parte inicialmente pra ser eficiente de lidar com isso. (Não rola nenhum gerenciamento de memória por parte sua, o compilador faz tudo)
+Data Segment: É onde suas variáveis globais/estáticas são alocados. (Não rola nenhum gerenciamento de memória por parte sua, o compilador faz tudo)
 
 ```c
 //exemplo de ds
-int array[3] = {1, 2, 3};
+static int i = 0;
 ```
 
 Stack: Onde suas variaveis que não são dinamicamente alocadas vão (você não usou malloc), semelhante ao data segment nada acontece aqui sobre escopo, o compilador faz tudo. Um adendo, isso funciona igual a estrutura de dados com mesmo nome. O último a entrar é o primeiro a sair. :)
