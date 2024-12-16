@@ -50,6 +50,13 @@ Acho que muita gente acaba usando isso, mas eu não tenho um painel interativo h
 
 Normalmente, a gente não tem lançador de aplicativos da forma que é usado aqui, mas como o design de um window manager é focado no teclado e não temos ícones na área de trabalho, essa é a forma de abrirmos as coisas fora do terminal. Eu estou usando o `ulauncher` (como você pode ver na foto) para abrir meus aplicativos sem um terminal. Achei bem mais prático criar atalhos para lançar meu Emacs (que é gerenciado via Guix, então não tem formas de abrir fora do terminal, a menos que eu crie manualmente), por exemplo, do que criar todo um arquivo de ícone para ele.
 
+# Shell
+
+Por alguns anos venho usando o `ZSH` (Z shell), com alguns plugins e acabou que usava por fator cosmético. Então descobri o pacote `OH MY BASH` que oferece basicamente tudo que eu precisava e também troquei o tema normalmente uso o `agnoster` mas optei pelo `cupcake`. 
+
+Outro fator que colaborou foi os estudos sobre free software. Acabou que isso influenciou um pouco na escolha. ![imagem do bash](https://raw.githubusercontent.com/Every2/blog/main/images/bash.png)
+
+
 
 # Distro
 
